@@ -11,7 +11,6 @@ module.exports = {
         proxyTable: {
             '/api': {
                 target: 'http://localhost:xxx',
-                //target: 'http://gw.ai-cloud.io:9292',
                 changeOrigin: true,
                 logLevel: 'debug',
                 pathRewrite: {
