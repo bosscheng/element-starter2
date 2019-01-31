@@ -2,7 +2,7 @@
 
 > A starter kit for Element UI by webpack 4.x
 
-webpack2.x hear [cooking](https://github.com/ElementUI/element-starter)
+webpack2.x version [element-starter](https://github.com/ElementUI/element-starter)
 
 
 ## Environment
