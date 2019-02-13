@@ -16,9 +16,9 @@ const webpackConfig = require('./webpack.prod.config');
 
 
 const spinner = ora('build for ' + process.env.env_config + ' environment');
-
 spinner.start();
 
+// remove dist/static directory
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), (err) => {
     //
     if (err) throw err;

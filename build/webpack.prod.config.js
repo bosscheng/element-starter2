@@ -16,6 +16,7 @@ const seen = new Set()
 const nameLength = 4
 
 const prodWebpackConfig = merge(baseWebpackConfig, {
+    // webpack 4.x add
     mode: 'production',
 
     output: {
@@ -26,6 +27,7 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
     },
 
     module: {
+        // add style loader
         rules: utils.styleLoaders({
             sourceMap: false,
             extract: true,
@@ -33,9 +35,11 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
         })
     },
     plugins: [
+        // define plugin
         new webpack.DefinePlugin({
             'process.env': require('../config/prod.env')
         }),
+
         // extract css into its own file
         new MiniCssExtractPlugin({
             filename: utils.assetsPath('css/[name].[contenthash:8].css'),
@@ -61,7 +65,9 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
             //`runtime` must same as runtimeChunk name. default is `runtime`
             inline: /runtime\..*\.js$/
         }),
+
         // keep chunk.id stable when chunk has no name
+        //
         new webpack.NamedChunksPlugin(chunk => {
             if (chunk.name) {
                 return chunk.name
@@ -78,11 +84,13 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
                 return modules[0].id
             }
         }),
+
         // keep module.id stable when vender modules does not change
         new webpack.HashedModuleIdsPlugin(),
     ],
 
     optimization: {
+        // split chunks
         splitChunks: {
             chunks: 'all',
             cacheGroups: {
@@ -110,7 +118,7 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
         runtimeChunk: 'single',
 
         minimizer: [
-
+            // uglify js plugin
             new UglifyJsPlugin({
                 uglifyOptions: {
                     mangle: {

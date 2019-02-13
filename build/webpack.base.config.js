@@ -3,7 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 
 const config = require('../config')
-
+// vue loader plugin
 const {VueLoaderPlugin} = require('vue-loader');
 
 //
