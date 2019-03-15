@@ -25,6 +25,14 @@ npm
 npm run dev
 ```
 
+
+## preview
+
+```bash
+# serve with dist dir at localhost:3001
+npm run preview
+```
+
 ## Build
 
 ``` bash
