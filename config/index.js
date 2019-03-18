@@ -46,10 +46,7 @@ module.exports = {
     },
 
     preview: {
-        proxy: {
-            target: 'http://xxx.xxx',
-            changeOrigin: true,
-        },
+        target: 'http://xxx.xxx',
         staticDir: "static",
         port: 3001,
         host: '0.0.0.0',

@@ -16,6 +16,11 @@ var requestType = {
 };
 
 
+var proxyConfig = {
+    target: previewConfig.target,
+    changeOrigin: true,
+};
+
 //
 http.createServer(function (request, response) {
     var pathName = url.parse(request.url).pathname;
@@ -26,8 +31,8 @@ http.createServer(function (request, response) {
     // 走转发走
     if (pathName.indexOf(previewConfig.prefix) !== -1) {
 
-        previewConfig.debug && console.log(`origin ${pathName} =====> to href ${previewConfig.proxy.target}${pathName}`);
-        proxy.web(request, response, previewConfig.proxy);
+        previewConfig.debug && console.log(`origin ${pathName} =====> to href ${proxyConfig.target}${pathName}`);
+        proxy.web(request, response, proxyConfig);
         return;
     }
 
