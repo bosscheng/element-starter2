@@ -9,8 +9,8 @@
     "build": "cross-env NODE_ENV=production env_config=prod node build/build.js"
   },
   "dependencies": {
-    "element-ui": "^2.5.3",
-    "vue": "^2.5.22"
+    "element-ui": "2.5.3",
+    "vue": "2.5.22"
   },
   "engines": {
     "node": ">=6"
