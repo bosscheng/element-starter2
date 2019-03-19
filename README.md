@@ -15,7 +15,7 @@ webpack2.x version [element-starter](https://github.com/ElementUI/element-starte
  - Enter your local directory, and install dependencies:
 
 ``` npm
-npm
+npm i
 ```
 
 ## Develop
