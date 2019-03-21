@@ -15,7 +15,6 @@ var requestType = {
     "html": "text/html"
 };
 
-
 var proxyConfig = {
     target: previewConfig.target,
     changeOrigin: true,
@@ -31,7 +30,7 @@ http.createServer(function (request, response) {
     // 走转发走
     if (pathName.indexOf(previewConfig.prefix) !== -1) {
 
-        previewConfig.debug && console.log(`origin ${pathName} =====> to href ${proxyConfig.target}${pathName}`);
+        previewConfig.debug && console.log(`Rewriting path from "${pathName}" =====> to "${proxyConfig.target}${pathName}"`);
         proxy.web(request, response, proxyConfig);
         return;
     }
